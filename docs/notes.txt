@@ -1,0 +1,14 @@
+# main
+erik-pc : 192.168.86.10
+
+# control node
+yellow : 192.168.86.11
+user : eearl
+pwd: 0268
+
+# worker node
+blue : 192.168.86.12
+
+# additional / temp nodes 
+pi4 : 192.168.86.13
+pi2 : 192.168.86.14
