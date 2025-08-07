@@ -11,7 +11,7 @@ A lightweight, two-node Kubernetes cluster with optional Raspberry Pi expansion
   * Primary Storage: 256 GB NVMe SSD
   * Secondary Storage: 2 TB HDD
   * GPU: NVIDIA GT 730 (2 GB)
-  * IP: 192.168.86.11 (user: eearl, pwd: 0268)
+  * IP: 192.168.86.11
 
 * **Worker Node** `blue` (OptiPlex 3050 MT)
 
