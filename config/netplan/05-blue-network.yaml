@@ -1,0 +1,29 @@
+network:
+  version: 2
+  renderer: networkd
+
+  ethernets:
+    enp1s0:
+      dhcp4: no
+      addresses: [192.168.86.12/24]
+      routes:
+        - to: default
+          via: 192.168.86.1
+      nameservers:
+        addresses: [1.1.1.1, 1.0.0.1]
+      wakeonlan: true
+      optional: true
+
+#  wifis:
+#    wlp2s0:
+#      dhcp4: no 
+#      addresses: [192.168.86.12/24]
+#      routes:
+#        - to: default
+#          via: 192.168.86.1
+#      nameservers:
+#        addresses: [1.1.1.1, 1.0.0.1]
+#      access-points:
+#        "Earl HQ":
+#          password: "8585410268"
+
