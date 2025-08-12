@@ -1,0 +1,9 @@
+# logs from specific container
+k logs multi-pod --container multi-pod
+
+# exec into specific container
+k exec -it multi-pod --container multi-pod2 -- sh
+
+
+# read from pod
+k run tmp --image=busybox --restart=Never -it --command -- /bin/sh -c 'wget 10.0.1.226 -O-'
