@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: run-on-node
+  name: run-on-node
+spec:
+  containers:
+  - image: nginx
+    name: run-on-node
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+  nodeSelector:
+    speed: slow
+status: {}
