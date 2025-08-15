@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  creationTimestamp: null
+  name: cjob-miss
+spec:
+  startingDeadlineSeconds: 17
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      name: cjob-miss
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+          - command:
+            - sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster
+            image: busybox
+            name: cjob-miss
+            resources: {}
+          restartPolicy: OnFailure
+  schedule: '*/1 * * * *'
+status: {}

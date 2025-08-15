@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: null
+  name: terminate
+spec:
+  activeDeadlineSeconds: 30
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - command:
+        - sh
+        - -c
+        - while true; do echo hi; sleep 5; done;
+        image: busybox
+        name: terminate
+        resources: {}
+      restartPolicy: Never
+status: {}
