@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: liveness-demo
+  name: liveness-demo
+spec:
+  containers:
+  - image: nginx
+    name: liveness-demo
+    resources: {}
+    livenessProbe:
+      exec:
+        command: ["ls","/non/exist"]
+      initialDelaySeconds: 5
+      periodSeconds: 5
+  dnsPolicy: ClusterFirst

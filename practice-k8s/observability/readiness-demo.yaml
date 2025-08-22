@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  name: ready-test
+spec:
+  containers:
+  - image: nginx
+    name: test
+    ports:
+    - containerPort: 80
+      name: test-port
+    resources: {}
+    readinessProbe:
+      httpGet:
+        path: /
+        port: test-port
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
