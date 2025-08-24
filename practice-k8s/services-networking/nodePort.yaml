@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: nodeport
+  name: nodeport
+spec:
+  ports:
+  - port: 80
+    nodePort: 31066
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: nodeport
+  type: NodePort
+status:
+  loadBalancer: {}
