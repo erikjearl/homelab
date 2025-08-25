@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: storepod
+  name: storepod
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 32032
+  selector:
+    run: storepod
+  type: NodePort
+status:
+  loadBalancer: {}

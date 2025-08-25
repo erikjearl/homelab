@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: securedpod
+  name: securedpod
+spec:
+  securityContext:
+    runAsGroup: 2000
+  containers:
+  - image: nginx:latest
+    name: securedpod
+    resources: {}
+    securityContext:
+      allowPrivilegeEscalation: false
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

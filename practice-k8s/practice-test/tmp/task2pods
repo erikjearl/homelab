@@ -1,0 +1,5 @@
+etcd-yellow
+kube-apiserver-yellow
+kube-controller-manager-yellow
+kube-scheduler-yellow
+

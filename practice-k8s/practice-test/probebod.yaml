@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: probepod
+  name: probepod
+  namespace: probes
+spec:
+  containers:
+  - args:
+    - sh
+    - -c
+    - sleep
+    - infinity
+    image: busybox
+    name: probepod
+    resources: {}
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 8080
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: snowdeploy
+  name: snowdeploy
+  namespace: nebraska
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snowdeploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: snowdeploy
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
+        resources:
+          requests:
+            memory: "64Mi"
+          limits:
+            memory: "128Mi"
+status: {}

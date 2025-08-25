@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: oregonpod
+  name: oregonpod
+spec:
+  containers:
+  - image: nginx:latest
+    name: oregonpod
+    resources: {}
+    volumeMounts:
+    - name: oregon-volume
+      mountPath: /usr/share/nginx/html/
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  volumes:
+    - name: oregon-volume
+      configMap:
+        name: task3cm
+status: {}

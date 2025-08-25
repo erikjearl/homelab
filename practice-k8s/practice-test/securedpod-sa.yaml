@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: securepod
+  name: securepod
+  namespace: oklahoma
+spec:
+  serviceAccountName: secure
+  containers:
+  - image: nginx:latest
+    name: securepod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

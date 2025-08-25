@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: sidepod
+  name: sidepod
+spec:
+  containers:
+  - image: nginx:latest
+    name: sidepod
+    resources: {}
+  initContainers:
+  - name: sidepod-init
+    restartPolicy: Always
+    image: busybox
+    command: ['sh', '-c', 'sleep 15']
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
